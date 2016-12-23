@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\..\..\include\timp;..\..\..\..\logger\src\logger;..\..\..\..\fs\src\fs;..\..\..\..\sm\src\sm;..\..\..\..\cu\src\cu;..\..\..\..\particle\src;..\..\..\..\mtrail\src\mtrail;..\..\..\..\editor-external\c99;..\..\..\..\editor-external\lzma\include"
+				AdditionalIncludeDirectories="..\..\..\..\editor-external\c99;..\..\..\include\timp;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\cu\src\cu;..\..\..\..\particle\src;..\..\..\..\editor-external\lzma\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GLEW_STATIC;EASY_EDITOR"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -105,7 +105,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="..\..\..\include\timp;..\..\..\..\logger\src\logger;..\..\..\..\fs\src\fs;..\..\..\..\sm\src\sm;..\..\..\..\cu\src\cu;..\..\..\..\particle\src;..\..\..\..\mtrail\src\mtrail;..\..\..\..\editor-external\c99;..\..\..\..\editor-external\lzma\include"
+				AdditionalIncludeDirectories="..\..\..\..\editor-external\c99;..\..\..\include\timp;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\cu\src\cu;..\..\..\..\particle\src;..\..\..\..\editor-external\lzma\include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GLEW_STATIC;EASY_EDITOR"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -146,14 +146,6 @@
 	</References>
 	<Files>
 		<File
-			RelativePath="..\..\..\source\ImportStream.cpp"
-			>
-		</File>
-		<File
-			RelativePath="..\..\..\include\timp\ImportStream.h"
-			>
-		</File>
-		<File
 			RelativePath="..\..\..\source\Package.cpp"
 			>
 		</File>
@@ -162,11 +154,23 @@
 			>
 		</File>
 		<File
-			RelativePath="..\..\..\source\Texture.cpp"
+			RelativePath="..\..\..\source\PkgMgr.cpp"
 			>
 		</File>
 		<File
-			RelativePath="..\..\..\include\timp\Texture.h"
+			RelativePath="..\..\..\include\timp\PkgMgr.h"
+			>
+		</File>
+		<File
+			RelativePath="..\..\..\include\timp\TextureFormat.h"
+			>
+		</File>
+		<File
+			RelativePath="..\..\..\source\TextureLoader.cpp"
+			>
+		</File>
+		<File
+			RelativePath="..\..\..\include\timp\TextureLoader.h"
 			>
 		</File>
 	</Files>
