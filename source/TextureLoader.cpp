@@ -16,6 +16,15 @@ TextureLoader::TextureLoader(const std::string& filepath)
 {
 }
 
+TextureLoader::TextureLoader(const char* data, size_t size)
+	: bimp::FileLoader(data, size)
+	, m_format(0)
+	, m_width(0)
+	, m_height(0)
+	, m_data(NULL)
+{	
+}
+
 void TextureLoader::OnLoad(bimp::ImportStream& is)
 {
 	m_format = is.UInt8();
