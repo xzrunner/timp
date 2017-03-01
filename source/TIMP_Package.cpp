@@ -1,4 +1,4 @@
-#include "Package.h"
+#include "TIMP_Package.h"
 
 #include <bimp/ImportStream.h>
 
