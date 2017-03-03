@@ -146,14 +146,6 @@
 	</References>
 	<Files>
 		<File
-			RelativePath="..\..\..\source\Package.cpp"
-			>
-		</File>
-		<File
-			RelativePath="..\..\..\include\timp\Package.h"
-			>
-		</File>
-		<File
 			RelativePath="..\..\..\source\PkgMgr.cpp"
 			>
 		</File>
@@ -171,6 +163,14 @@
 		</File>
 		<File
 			RelativePath="..\..\..\include\timp\TextureLoader.h"
+			>
+		</File>
+		<File
+			RelativePath="..\..\..\source\TIMP_Package.cpp"
+			>
+		</File>
+		<File
+			RelativePath="..\..\..\include\timp\TIMP_Package.h"
 			>
 		</File>
 	</Files>
