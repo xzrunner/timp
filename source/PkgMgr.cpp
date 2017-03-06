@@ -35,4 +35,13 @@ const Package* PkgMgr::Query(int id) const
 	}
 }
 
+void PkgMgr::Clear()
+{
+	std::map<int, Package*>::iterator itr = m_packages.begin();
+	for ( ; itr != m_packages.end(); ++itr) {
+		delete itr->second;
+	}
+	m_packages.clear();
+}
+
 }
