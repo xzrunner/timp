@@ -6,7 +6,14 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := timp
 
+LOCAL_C_INCLUDES  := \
+	${TIMP_SRC_PATH}/include/timp \
+	${CU_SRC_PATH} \
+	${BIMP_SRC_PATH}/include \
+	${LOGGER_SRC_PATH} \
+
 LOCAL_SRC_FILES := \
+	$(subst $(LOCAL_PATH)/,,$(shell find $(LOCAL_PATH) -name "*.cpp" -print)) \
 
 include $(BUILD_STATIC_LIBRARY)
 
