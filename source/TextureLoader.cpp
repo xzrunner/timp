@@ -28,6 +28,11 @@ TextureLoader::TextureLoader(const char* data, size_t size)
 void TextureLoader::OnLoad(bimp::ImportStream& is)
 {
 	m_format = is.UInt8();
+	// 暂时先对pvr这样处理， 之后会调整打包工具
+	if(m_format==2) {
+		is.UInt8();
+		m_format = TEXTURE_PVR4;
+	}
 	switch (m_format)
 	{
 	case TEXTURE_RGBA4: case TEXTURE_RGBA8:
