@@ -32,7 +32,10 @@ void TextureLoader::OnLoad(bimp::ImportStream& is)
 	if(m_format==2) {
 		is.UInt8();
 		m_format = TEXTURE_PVR4;
+	}else if(m_format == 4) {
+		m_format = TEXTURE_ETC2;
 	}
+	
 	switch (m_format)
 	{
 	case TEXTURE_RGBA4: case TEXTURE_RGBA8:
