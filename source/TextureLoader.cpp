@@ -46,6 +46,10 @@ void TextureLoader::OnLoad(bimp::ImportStream& is)
 	case TEXTURE_PVR4:
 		m_width  = is.UInt16();
 		m_height = is.UInt16();
+		// 暂时先跳过4字节, 修正pvr像素地址
+		is.UInt16();
+		is.UInt16();
+		//-----------------------
 		m_data   = is.Stream();
 		break;
 	case TEXTURE_ETC1:
