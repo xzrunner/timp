@@ -27,15 +27,7 @@ TextureLoader::TextureLoader(const char* data, size_t size)
 
 void TextureLoader::OnLoad(bimp::ImportStream& is)
 {
-	m_format = is.UInt8();
-	// 暂时先对pvr这样处理， 之后会调整打包工具
-	if(m_format==2) {
-		is.UInt8();
-		m_format = TEXTURE_PVR4;
-	}else if(m_format == 4) {
-		m_format = TEXTURE_ETC2;
-	}
-	
+	m_format = is.UInt8();	
 	switch (m_format)
 	{
 	case TEXTURE_RGBA4: case TEXTURE_RGBA8:
@@ -46,10 +38,7 @@ void TextureLoader::OnLoad(bimp::ImportStream& is)
 	case TEXTURE_PVR4:
 		m_width  = is.UInt16();
 		m_height = is.UInt16();
-		// 暂时先跳过4字节, 修正pvr像素地址
-		is.UInt16();
-		is.UInt16();
-		//-----------------------
+		is.UInt32();  // buffer size, no use
 		m_data   = is.Stream();
 		break;
 	case TEXTURE_ETC1:
