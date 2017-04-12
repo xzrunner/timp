@@ -36,9 +36,10 @@ void TextureLoader::OnLoad(bimp::ImportStream& is)
 		m_data   = is.Stream();
 		break;
 	case TEXTURE_PVR4:
+		is.UInt8();		// skip internal format
 		m_width  = is.UInt16();
 		m_height = is.UInt16();
-		is.UInt32();  // buffer size, no use
+		is.UInt32(); 	// skip buffer size
 		m_data   = is.Stream();
 		break;
 	case TEXTURE_ETC1:
