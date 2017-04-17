@@ -37,6 +37,7 @@ public:
 	};
 
 	const std::vector<TextureDesc>& GetAllTextures() const { return m_textures; }
+	const TextureDesc& GetTexDesc(int tex, int lod) const;
 
 private:
 	void LoadIndex(const std::string& filepath);

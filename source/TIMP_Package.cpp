@@ -31,6 +31,13 @@ const std::string& Package::GetTexPath(int tex, int lod) const
 	return m_tex_paths[idx];
 }
 
+const Package::TextureDesc& Package::GetTexDesc(int tex, int lod) const
+{
+	int idx = tex * m_lod_count + lod;
+	assert(idx < m_tex_paths.size());
+	return m_textures[idx];
+}
+
 void Package::LoadIndex(const std::string& filepath)
 {
 	m_textures.clear();
