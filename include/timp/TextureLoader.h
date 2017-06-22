@@ -13,6 +13,7 @@ class TextureLoader : public bimp::FileLoader
 public:
 	TextureLoader(const std::string& filepath);
 	TextureLoader(const char* data, size_t size);
+	TextureLoader(fs_file* file, uint32_t offset);
 
 	int GetFormat() const { return m_format; }
 

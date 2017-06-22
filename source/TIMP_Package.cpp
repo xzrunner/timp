@@ -13,18 +13,24 @@ Package::Package(const std::string& filepath)
 	LoadIndex(filepath);
 }
 
+Package::Package(fs_file* file, uint32_t offset)
+	: m_lod_count(1)
+{
+	LoadIndex(file, offset);
+}
+
 Package::~Package()
 {
 }
 
-void Package::SetTexPath(int tex, int lod, const std::string& path)
+void Package::SetTexPath(int tex, int lod, const bimp::FilePath& path)
 {
 	int idx = tex * m_lod_count + lod;
 	assert(idx < m_tex_paths.size());
 	m_tex_paths[idx] = path;
 }
 
-const std::string& Package::GetTexPath(int tex, int lod) const
+const bimp::FilePath& Package::GetTexPath(int tex, int lod) const
 {
 	int idx = tex * m_lod_count + lod;
 	assert(idx < m_tex_paths.size());
@@ -46,6 +52,15 @@ void Package::LoadIndex(const std::string& filepath)
 	m_tex_paths.resize(m_textures.size() * m_lod_count);
 }
 
+void Package::LoadIndex(fs_file* file, uint32_t offset)
+{
+	m_textures.clear();
+	TextureDescLoader loader(file, offset, m_textures, m_lod_count);
+	loader.Load();
+
+	m_tex_paths.resize(m_textures.size() * m_lod_count);
+}
+
 /************************************************************************/
 /* class Package::TextureDescLoader                                     */
 /************************************************************************/
@@ -54,6 +69,15 @@ Package::TextureDescLoader::TextureDescLoader(const std::string& filepath,
 											  std::vector<TextureDesc>& textures,
 											  int& lod_count)
 	: bimp::FileLoader(filepath)
+	, m_images(textures)
+	, m_lod_count(lod_count)
+{
+}
+
+Package::TextureDescLoader::TextureDescLoader(fs_file* file, uint32_t offset, 
+											  std::vector<TextureDesc>& textures, 
+											  int& lod_count)
+	: bimp::FileLoader(file, offset)
 	, m_images(textures)
 	, m_lod_count(lod_count)
 {

@@ -3,6 +3,7 @@
 
 #include <CU_Uncopyable.h>
 #include <bimp/FileLoader.h>
+#include <bimp/FilePath.h>
 
 #include <vector>
 #include <string>
@@ -21,13 +22,14 @@ class Package : private cu::Uncopyable
 {
 public:
 	Package(const std::string& filepath);
+	Package(fs_file* file, uint32_t offset);
 	~Package();
 
 	int GetTexCount() const { return m_textures.size(); }
 	int GetLodCount() const { return m_lod_count; }
 
-	void SetTexPath(int tex, int lod, const std::string& path);
-	const std::string& GetTexPath(int tex, int lod) const;
+	void SetTexPath(int tex, int lod, const bimp::FilePath& path);
+	const bimp::FilePath& GetTexPath(int tex, int lod) const;
 
 public:
 	struct TextureDesc
@@ -41,12 +43,15 @@ public:
 
 private:
 	void LoadIndex(const std::string& filepath);
+	void LoadIndex(fs_file* file, uint32_t offset);
 
 private:
 	class TextureDescLoader : public bimp::FileLoader
 	{
 	public:
 		TextureDescLoader(const std::string& filepath, 
+			std::vector<TextureDesc>& images, int& lod_count);
+		TextureDescLoader(fs_file* file, uint32_t offset, 
 			std::vector<TextureDesc>& images, int& lod_count);
 
 	protected:
@@ -62,7 +67,7 @@ private:
 	std::vector<TextureDesc> m_textures;
 
 	int m_lod_count;
-	std::vector<std::string> m_tex_paths;
+	std::vector<bimp::FilePath> m_tex_paths;
 
 }; // Package
 
