@@ -88,6 +88,8 @@ void Package::TextureDescLoader::OnLoad(bimp::ImportStream& is)
 	int tex_count = is.UInt16();
 	int lod_count = is.UInt16();
 	m_lod_count = lod_count;
+	// no lod
+	m_lod_count = 1;
 
 	m_images.reserve(tex_count);
 	for (int i = 0; i < tex_count; ++i)
