@@ -9,6 +9,7 @@ LOCAL_MODULE := timp
 LOCAL_C_INCLUDES  := \
 	${TIMP_SRC_PATH}/include/timp \
 	${CU_SRC_PATH} \
+	${FS_SRC_PATH} \
 	${BIMP_SRC_PATH}/include \
 	${LOGGER_SRC_PATH} \
 
