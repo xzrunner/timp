@@ -26,20 +26,20 @@ Package::~Package()
 void Package::SetTexPath(int tex, int lod, const bimp::FilePath& path)
 {
 	int idx = tex * m_lod_count + lod;
-	assert(idx < m_tex_paths.size());
+	assert(static_cast<size_t>(idx) < m_tex_paths.size());
 	m_tex_paths[idx] = path;
 }
 
 const bimp::FilePath& Package::GetTexPath(int tex, int lod) const
 {
 	int idx = tex * m_lod_count + lod;
-	assert(idx < m_tex_paths.size());
+	assert(static_cast<size_t>(idx) < m_tex_paths.size());
 	return m_tex_paths[idx];
 }
 
 const Package::TextureDesc& Package::GetTexDesc(int tex) const
 {
-	assert(tex >= 0 && tex < m_textures.size());
+	assert(tex >= 0 && static_cast<size_t>(tex) < m_textures.size());
 	return m_textures[tex];
 }
 
