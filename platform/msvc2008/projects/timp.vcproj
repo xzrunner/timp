@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="9.00"
 	Name="1.timp"
-	ProjectGUID="{EE2229A3-AD5F-46E7-AFAB-729F8AA18036}"
+	ProjectGUID="{27824966-6C3C-4874-ABFF-499DDDDB4D48}"
 	RootNamespace="timp"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
