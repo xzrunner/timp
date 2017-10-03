@@ -1,7 +1,7 @@
 #ifndef _TIMP_PACKAGE_H_
 #define _TIMP_PACKAGE_H_
 
-#include <CU_Uncopyable.h>
+#include <cu/uncopyable.h>
 #include <bimp/FileLoader.h>
 #include <bimp/FilePath.h>
 

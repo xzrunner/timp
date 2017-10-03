@@ -4,7 +4,7 @@
 namespace timp
 {
 
-SINGLETON_DEFINITION(PkgMgr);
+CU_SINGLETON_DEFINITION(PkgMgr);
 
 PkgMgr::PkgMgr()
 {
