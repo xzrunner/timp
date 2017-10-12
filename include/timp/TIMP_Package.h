@@ -4,6 +4,7 @@
 #include <cu/uncopyable.h>
 #include <bimp/FileLoader.h>
 #include <bimp/FilePath.h>
+#include <memmgr/Allocator.h>
 
 #include <vector>
 #include <string>
@@ -38,7 +39,7 @@ public:
 		int type;
 	};
 
-	const std::vector<TextureDesc>& GetAllTextures() const { return m_textures; }
+	const mm::AllocVector<TextureDesc>& GetAllTextures() const { return m_textures; }
 	const TextureDesc& GetTexDesc(int tex) const;
 
 private:
@@ -49,25 +50,25 @@ private:
 	class TextureDescLoader : public bimp::FileLoader
 	{
 	public:
-		TextureDescLoader(const std::string& filepath, 
-			std::vector<TextureDesc>& images, int& lod_count);
+		TextureDescLoader(const bimp::ResString& filepath,
+			mm::AllocVector<TextureDesc>& images, int& lod_count);
 		TextureDescLoader(fs_file* file, uint32_t offset, 
-			std::vector<TextureDesc>& images, int& lod_count);
+			mm::AllocVector<TextureDesc>& images, int& lod_count);
 
 	protected:
 		virtual void OnLoad(bimp::ImportStream& is);
 
 	private:
-		std::vector<TextureDesc>& m_images;
+		mm::AllocVector<TextureDesc>& m_images;
 		int& m_lod_count;
 
 	}; // TextureDescLoader
 
 private:
-	std::vector<TextureDesc> m_textures;
+	mm::AllocVector<TextureDesc> m_textures;
 
 	int m_lod_count;
-	std::vector<bimp::FilePath> m_tex_paths;
+	mm::AllocVector<bimp::FilePath> m_tex_paths;
 
 }; // Package
 

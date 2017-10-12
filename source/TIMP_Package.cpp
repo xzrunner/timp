@@ -46,7 +46,7 @@ const Package::TextureDesc& Package::GetTexDesc(int tex) const
 void Package::LoadIndex(const std::string& filepath)
 {
 	m_textures.clear();
-	TextureDescLoader loader(filepath, m_textures, m_lod_count);
+	TextureDescLoader loader(filepath.c_str(), m_textures, m_lod_count);
 	loader.Load();
 
 	m_tex_paths.resize(m_textures.size() * m_lod_count);
@@ -65,8 +65,8 @@ void Package::LoadIndex(fs_file* file, uint32_t offset)
 /* class Package::TextureDescLoader                                     */
 /************************************************************************/
 
-Package::TextureDescLoader::TextureDescLoader(const std::string& filepath, 
-											  std::vector<TextureDesc>& textures,
+Package::TextureDescLoader::TextureDescLoader(const bimp::ResString& filepath,
+											  mm::AllocVector<TextureDesc>& textures,
 											  int& lod_count)
 	: bimp::FileLoader(filepath)
 	, m_images(textures)
@@ -75,7 +75,7 @@ Package::TextureDescLoader::TextureDescLoader(const std::string& filepath,
 }
 
 Package::TextureDescLoader::TextureDescLoader(fs_file* file, uint32_t offset, 
-											  std::vector<TextureDesc>& textures, 
+											  mm::AllocVector<TextureDesc>& textures, 
 											  int& lod_count)
 	: bimp::FileLoader(file, offset)
 	, m_images(textures)
