@@ -7,7 +7,7 @@
 namespace timp
 {
 
-TextureLoader::TextureLoader(const bimp::ResString& filepath)
+TextureLoader::TextureLoader(const std::string& filepath)
 	: bimp::FileLoader(filepath)
 	, m_format(0)
 	, m_width(0)

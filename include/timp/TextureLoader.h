@@ -11,7 +11,7 @@ namespace timp
 class TextureLoader : public bimp::FileLoader
 {
 public:
-	TextureLoader(const bimp::ResString& filepath);
+	TextureLoader(const std::string& filepath);
 	TextureLoader(const char* data, size_t size);
 	TextureLoader(fs_file* file, uint32_t offset);
 
