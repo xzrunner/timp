@@ -7,7 +7,7 @@
 namespace timp
 {
 
-Package::Package(const std::string& filepath)
+Package::Package(const CU_STR& filepath)
 	: m_lod_count(1)
 {
 	LoadIndex(filepath);
@@ -43,7 +43,7 @@ const Package::TextureDesc& Package::GetTexDesc(int tex) const
 	return m_textures[tex];
 }
 
-void Package::LoadIndex(const std::string& filepath)
+void Package::LoadIndex(const CU_STR& filepath)
 {
 	m_textures.clear();
 	TextureDescLoader loader(filepath.c_str(), m_textures, m_lod_count);
@@ -66,7 +66,7 @@ void Package::LoadIndex(fs_file* file, uint32_t offset)
 /************************************************************************/
 
 Package::TextureDescLoader::TextureDescLoader(const std::string& filepath,
-											  mm::AllocVector<TextureDesc>& textures,
+											  CU_VEC<TextureDesc>& textures,
 											  int& lod_count)
 	: bimp::FileLoader(filepath)
 	, m_images(textures)
@@ -75,7 +75,7 @@ Package::TextureDescLoader::TextureDescLoader(const std::string& filepath,
 }
 
 Package::TextureDescLoader::TextureDescLoader(fs_file* file, uint32_t offset, 
-											  mm::AllocVector<TextureDesc>& textures, 
+											  CU_VEC<TextureDesc>& textures, 
 											  int& lod_count)
 	: bimp::FileLoader(file, offset)
 	, m_images(textures)
