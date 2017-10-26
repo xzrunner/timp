@@ -12,7 +12,7 @@ TextureLoader::TextureLoader(const std::string& filepath)
 	, m_format(0)
 	, m_width(0)
 	, m_height(0)
-	, m_data(NULL)
+	, m_data(nullptr)
 {
 }
 
@@ -21,7 +21,7 @@ TextureLoader::TextureLoader(const char* data, size_t size)
 	, m_format(0)
 	, m_width(0)
 	, m_height(0)
-	, m_data(NULL)
+	, m_data(nullptr)
 {	
 }
 
@@ -30,7 +30,7 @@ TextureLoader::TextureLoader(fs_file* file, uint32_t offset)
 	, m_format(0)
 	, m_width(0)
 	, m_height(0)
-	, m_data(NULL)
+	, m_data(nullptr)
 {
 }
 
