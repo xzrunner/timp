@@ -1,5 +1,5 @@
-#include "TIMP_Facade.h"
-#include "PkgMgr.h"
+#include "timp/Facade.h"
+#include "timp/PkgMgr.h"
 
 namespace timp
 {

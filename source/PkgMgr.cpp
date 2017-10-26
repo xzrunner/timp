@@ -1,5 +1,5 @@
-#include "PkgMgr.h"
-#include "TIMP_Package.h"
+#include "timp/PkgMgr.h"
+#include "timp/Package.h"
 
 namespace timp
 {

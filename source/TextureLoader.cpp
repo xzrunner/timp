@@ -1,7 +1,7 @@
-#include "TextureLoader.h"
-#include "TextureFormat.h"
+#include "timp/TextureLoader.h"
+#include "timp/TextureFormat.h"
 
-#include <bimp/BIMP_ImportStream.h>
+#include <bimp/ImportStream.h>
 #include <fault.h>
 
 namespace timp

@@ -1,6 +1,6 @@
-#include "TIMP_Package.h"
+#include "timp/Package.h"
 
-#include <bimp/BIMP_ImportStream.h>
+#include <bimp/ImportStream.h>
 
 #include <assert.h>
 

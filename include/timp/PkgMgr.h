@@ -1,7 +1,7 @@
 #ifndef _TIMP_PKG_MGR_H_
 #define _TIMP_PKG_MGR_H_
 
-#include "TIMP_Package.h"
+#include "timp/Package.h"
 
 #include <cu/uncopyable.h>
 #include <cu/cu_macro.h>
