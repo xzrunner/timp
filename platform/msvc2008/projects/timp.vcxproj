@@ -10,6 +10,19 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\timp\Facade.h" />
+    <ClInclude Include="..\..\..\include\timp\Package.h" />
+    <ClInclude Include="..\..\..\include\timp\PkgMgr.h" />
+    <ClInclude Include="..\..\..\include\timp\TextureFormat.h" />
+    <ClInclude Include="..\..\..\include\timp\TextureLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\Facade.cpp" />
+    <ClCompile Include="..\..\..\source\Package.cpp" />
+    <ClCompile Include="..\..\..\source\PkgMgr.cpp" />
+    <ClCompile Include="..\..\..\source\TextureLoader.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectName>1.timp</ProjectName>
     <ProjectGuid>{27824966-6C3C-4874-ABFF-499DDDDB4D48}</ProjectGuid>
@@ -52,7 +65,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\..\editor-external\c99;..\..\..\include\timp;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\cu\src\cu;..\..\..\..\particle\src;..\..\..\..\editor-external\lzma\include;..\..\..\..\fs\src\fs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\editor-external\c99;..\..\..\include;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\memmgr\include;..\..\..\..\flatten\include;..\..\..\..\cooking\include;..\..\..\..\ds\src\ds;..\..\..\..\cu\src;..\..\..\..\particle\src;..\..\..\..\editor-external\lzma\include;..\..\..\..\fs\src\fs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GLEW_STATIC;EASY_EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -66,7 +79,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>..\..\..\..\editor-external\c99;..\..\..\include\timp;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\cu\src\cu;..\..\..\..\particle\src;..\..\..\..\editor-external\lzma\include;..\..\..\..\fs\src\fs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\editor-external\c99;..\..\..\include;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\memmgr\include;..\..\..\..\flatten\include;..\..\..\..\cooking\include;..\..\..\..\ds\src\ds;..\..\..\..\cu\src;..\..\..\..\particle\src;..\..\..\..\editor-external\lzma\include;..\..\..\..\fs\src\fs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;GLEW_STATIC;EASY_EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -75,17 +88,6 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\source\PkgMgr.cpp" />
-    <ClCompile Include="..\..\..\source\TextureLoader.cpp" />
-    <ClCompile Include="..\..\..\source\TIMP_Package.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\include\timp\PkgMgr.h" />
-    <ClInclude Include="..\..\..\include\timp\TextureFormat.h" />
-    <ClInclude Include="..\..\..\include\timp\TextureLoader.h" />
-    <ClInclude Include="..\..\..\include\timp\TIMP_Package.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
