@@ -23,7 +23,7 @@ public:
 	const void* GetData() const { return m_data; }
 
 protected:
-	virtual void OnLoad(bimp::ImportStream& is);
+	virtual void OnLoad(bimp::ImportStream& is) override;
 
 private:
 	int m_format;

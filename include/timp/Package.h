@@ -55,7 +55,7 @@ private:
 			CU_VEC<TextureDesc>& images, int& lod_count);
 
 	protected:
-		virtual void OnLoad(bimp::ImportStream& is);
+		virtual void OnLoad(bimp::ImportStream& is) override;
 
 	private:
 		CU_VEC<TextureDesc>& m_images;
