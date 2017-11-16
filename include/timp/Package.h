@@ -7,6 +7,7 @@
 #include <bimp/FilePath.h>
 
 #include <vector>
+#include <memory>
 
 #include <stdint.h>
 
@@ -71,7 +72,11 @@ private:
 
 }; // Package
 
+#ifdef USE_MM_ALLOCATOR
 using PackagePtr = std::unique_ptr<Package, mm::alloc_deleter<mm::Allocator<Package>>>;
+#else
+using PackagePtr = std::unique_ptr<Package>;
+#endif // USE_MM_ALLOCATOR
 
 }
 
