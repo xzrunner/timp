@@ -65,7 +65,7 @@ void Package::LoadIndex(fs_file* file, uint32_t offset)
 /* class Package::TextureDescLoader                                     */
 /************************************************************************/
 
-Package::TextureDescLoader::TextureDescLoader(const std::string& filepath,
+Package::TextureDescLoader::TextureDescLoader(const CU_STR& filepath,
 											  CU_VEC<TextureDesc>& textures,
 											  int& lod_count)
 	: bimp::FileLoader(filepath)

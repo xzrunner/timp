@@ -50,7 +50,7 @@ private:
 	class TextureDescLoader : public bimp::FileLoader
 	{
 	public:
-		TextureDescLoader(const std::string& filepath,
+		TextureDescLoader(const CU_STR& filepath,
 			CU_VEC<TextureDesc>& images, int& lod_count);
 		TextureDescLoader(fs_file* file, uint32_t offset, 
 			CU_VEC<TextureDesc>& images, int& lod_count);
