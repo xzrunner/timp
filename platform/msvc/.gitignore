@@ -1,0 +1,5 @@
+timp/
+projects/*
+
+!projects/timp.vcxproj
+!projects/timp.vcxproj.filters
