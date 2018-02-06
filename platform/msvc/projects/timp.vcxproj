@@ -28,7 +28,7 @@
     <ProjectGuid>{27824966-6C3C-4874-ABFF-499DDDDB4D48}</ProjectGuid>
     <RootNamespace>timp</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-	<WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>    
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -66,7 +66,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\..\external\c99;..\..\..\include;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\memmgr\include;..\..\..\..\flatten\include;..\..\..\..\cooking\include;..\..\..\..\ds\src\ds;..\..\..\..\cu\src;..\..\..\..\guard\include;..\..\..\..\particle\src;..\..\..\..\external\lzma\include;..\..\..\..\fs\src\fs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\external\c99;..\..\..\include;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\memmgr\include;..\..\..\..\flatten\include;..\..\..\..\cooking\include;..\..\..\..\ds\src\ds;..\..\..\..\cu\src;..\..\..\..\guard\include;..\..\..\..\external\lzma\include;..\..\..\..\fs\src\fs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -80,7 +80,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>..\..\..\..\external\c99;..\..\..\include;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\memmgr\include;..\..\..\..\flatten\include;..\..\..\..\cooking\include;..\..\..\..\ds\src\ds;..\..\..\..\cu\src;..\..\..\..\guard\include;..\..\..\..\particle\src;..\..\..\..\external\lzma\include;..\..\..\..\fs\src\fs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\external\c99;..\..\..\include;..\..\..\..\bimp\include;..\..\..\..\logger\src\logger;..\..\..\..\memmgr\include;..\..\..\..\flatten\include;..\..\..\..\cooking\include;..\..\..\..\ds\src\ds;..\..\..\..\cu\src;..\..\..\..\guard\include;..\..\..\..\external\lzma\include;..\..\..\..\fs\src\fs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
